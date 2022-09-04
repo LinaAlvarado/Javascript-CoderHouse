@@ -1,4 +1,5 @@
 ### Funcionalidad del programa :white_check_mark:
+- Permitir al usuario seleccionar productos a comprar
 
 - Calcular costo total de productos seleccionados por el usuario.
 
