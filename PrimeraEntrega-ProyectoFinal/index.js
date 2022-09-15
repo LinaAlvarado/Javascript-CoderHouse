@@ -1,6 +1,6 @@
 //PRIMERA ENTREGA PROYECTO FINAL
 //* 3. Funciones esenciales del proceso a simular.
-//*  3.1 Función muestra productos menores al presupuesto del cliente
+//  3.1 Función muestra productos menores al presupuesto del cliente
 // 3.1.1. pide un presupuesto. 
 // 3.1.2. filtrar los articulos que cumplan con la condición (que el precio sea menor que el presupuesto).
 // 3.1.3. mostrar en un promt los articulos disponibles.
@@ -20,12 +20,13 @@ const productos =[
     { articulo: " marcador" , precio: 2000},
 ] 
 
+
 // 3.1.1. pide un presupuesto.
 function entradaPresupuestoUsuario() {
     let presupuesto = Number(prompt("Ingresa tu presupuesto, filtraremos los productos ideales para ti"));
     filtrarProductos(productos, presupuesto)
     return presupuesto;
-}
+};
 
 // 3.1.2. filtrar los articulos que cumplan con la condición (que el precio sea menor que el presupuesto).
 // 3.1.3. mostrar en un promt los articulos disponibles.
@@ -47,18 +48,28 @@ function filtrarProductos(data, presupuestoUsuario){
     // obtengo el producto o productos que el usuario quiere comprar
     let seleccionarProductos = prompt(`Estos son los articulos que coinciden en tu presupuesto, ¿Cuál quieres comprar? ${productosDisponibles}`)
     // pero obtengo los elementos en un mismo string, se deben separar para seguir con el siguiente paso
-    let productosSeparados = seleccionarProductos.split(',');
-    return productosSeparados;
-}
-;
+    let articulosArray= seleccionarProductos.split(',');
+    sumarPrecios(articulosArray)
+    return articulosArray;
+};
 
-// 3.1.5. sumar precios
-// 3.1.6. mostrar en pantalla lo que compro, y el total de la compra.
+    // 3.1.5. sumar precios
+    // 3.1.6. mostrar en pantalla lo que compro, y el total de la compra.
+
+let suma = 0;
+function sumarPrecios(articulos){
+        articulos.forEach(articulo => {
+        const productosAcomprar = productos.find(producto => producto.articulo == articulo) 
+        suma += productosAcomprar.precio
+    })
+    console.log(suma);
+    document.write(`Compraste:${articulos} <br>`)
+    document.write(`Total de la compra:${suma}`)
+};
+
+entradaPresupuestoUsuario();
 
 
-
-
-entradaPresupuestoUsuario()
 
 
 
