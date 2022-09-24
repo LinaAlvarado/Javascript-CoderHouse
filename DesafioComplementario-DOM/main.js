@@ -9,15 +9,15 @@
 // 3.1.6. mostrar en pantalla lo que compro, y el total de la compra.
 
 const productos =[
-    { articulo: "zapatos" , precio: 100000},
-    { articulo: "tenis" , precio: 50000},
-    { articulo: "vestido" , precio: 100000},
-    { articulo: "reloj" , precio: 30000},
-    { articulo: "anillo" , precio: 85000},
-    { articulo: " falda" , precio: 76000},
-    { articulo: " celular" , precio: 700000},
-    { articulo: " juguete" , precio: 40000},
-    { articulo: " marcador" , precio: 2000},
+    { articulo: "zapatos" , precio: 100000, url:"./src/img/zapato.png"},
+    { articulo: "tenis" , precio: 50000, url:"./src/img/tenis.png"},
+    { articulo: "vestido" , precio: 100000,  url:"./src/img/Vestido.png"},
+    { articulo: "reloj" , precio: 30000,  url:"./src/img/Reloj.png"},
+    { articulo: "anillo" , precio: 85000,  url:"./src/img/anillo.png"},
+    { articulo: "falda" , precio: 76000,  url:"./src/img/Falda.png"},
+    { articulo: "celular" , precio: 700000,  url:"./src/img/Celular.png"},
+    { articulo: "juguete" , precio: 40000,  url:"./src/img/Juguete.png"},
+    { articulo: "marcador" , precio: 2000, url:"./src/img/marcador.png"},
 ] 
 
 let ingresoPresupuesto = 0;
@@ -43,7 +43,7 @@ function filtrarProductos(data, presupuestoUsuario){
     if(productosFiltrados.length === 0){
         alert("No hay productos dentro del rango del presupuesto")
     } else {
-        alert("Acontinuación se mostrará los articulos que coinciden con tu presupuesto, por favor, seleccionar los elementos separados por una coma (,)")
+        alert("Acontinuación se mostrará los articulos que coinciden con tu presupuesto, por favor, seleccionar los elementos separados por una coma (,) y sin dejar espacios")
     }
     // se recorre el array y se guardan para enviarlas en un prompt
     for (let producto of productosFiltrados){
@@ -66,22 +66,23 @@ function sumarPrecios(articulos){
     const productosAcomprar = productos.find(producto => producto.articulo == articulo); 
     suma += productosAcomprar.precio;
     });
+
     console.log(suma);
     let contenedor = document.createElement("div")
     contenedor.innerHTML = `
     <h3> Detalles de la compra</h3>
-    <p> Articulos: ${articulos} </p>
+    <p> Articulos: ${articulos}</p>
+    <img src="${fotos}">
     <p> Tu presupuesto fue: ${ingresoPresupuesto}</p>
     <p> Total de la compra:${suma} </p>`
+    document.body.appendChild(contenedor);
     // document.write(`Compraste:${articulos} <br>`)
     // document.write(`Total de la compra:${suma}`)
-    document.body.appendChild(contenedor);
     // if (suma > ingresoPresupuesto){
     //     let contenedor = document.createElement("div")
     //     contenedor.innerHTML = `<p> Has pasado tu presupuesto, te faltan:${suma - ingresoPresupuesto}</p>` 
     //     document.body.appendChild(contenedor);
     // };
-
 };
 entradaPresupuestoUsuario();
 
