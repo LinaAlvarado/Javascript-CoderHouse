@@ -28,12 +28,13 @@ const verProductos = (todosProductos) => {
   const contenedorProductos = document.getElementById('productosContenedor');
   todosProductos.forEach( producto => {
    const card = document.createElement('div');
-   card.innerHTML +=`
+   card.innerHTML +=` <div>
    <img src="${producto.url}" alt="...">
    <div> 
    <h3>${producto.articulo}</h3>
    <p>$ ${producto.precio}</p>
    <button id="${producto.id}"> Añadir al carrito </button>
+   </div>
    </div>
    `
    contenedorProductos.append(card);
@@ -72,7 +73,7 @@ function filtrarProductos(data, presupuestoUsuario){
       contenedorNoProductos.append(anuncio);
     } else{
       console.log('si hay productos')
-      contenedorNoProductos.remove(anuncio);
+      contenedorNoProductos.innerHTML= ' '
     }
 
     const contenedorProductos = document.getElementById('productosContenedor');
@@ -121,6 +122,7 @@ const carrito = (idProducto)=>{
 const verCarrito = (ProductosCarrito) => {
   
    const contenedorCarrito = document.getElementById('alCarrito');
+   contenedorCarrito.innerHTML = ''  
    ProductosCarrito.forEach( productoComprado => {
       let contenedor = document.createElement('div')
       contenedor.classList.add('carrito')
@@ -136,10 +138,12 @@ const verCarrito = (ProductosCarrito) => {
    })
 }
 
+let carro = []
 const terminarCompra = () =>{
    const terminarCompra = localStorage.getItem('productos en el carrito')
-   JSON.parse(terminarCompra)
-   console.log('setItem', terminarCompra)
+   carro.push( JSON.parse(terminarCompra))
+  console.log(carro)
+   // console.log('setItem', terminarCompra)
 }
 
 terminarCompra();
