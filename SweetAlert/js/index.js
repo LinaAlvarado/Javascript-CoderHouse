@@ -29,6 +29,7 @@ const viewProducts = (products) => {
    const productContainer = document.getElementById('products-container');
       products.forEach(product => {
       const card = document.createElement('div');
+      card.setAttribute('id',`idProduct${product.id}` )
       card.innerHTML +=
       ` <div>
             <img src="${product.url}" alt="...">
@@ -80,6 +81,7 @@ function filterProducts(dataProducts, userBudget) {
    productsContainer.innerHTML = '';
    for (let product of filteredProducts) {
       const card = document.createElement('div');
+      card.setAttribute('id',`idProduct${product.id}` )
       card.innerHTML += `
     <img src="${product.url}" alt="...">
     <div> 
@@ -117,6 +119,7 @@ const viewCart = (productsInCart) => {
    cartContainer.innerHTML = ''
    productsInCart.forEach(productInCart => {
       let container = document.createElement('div')
+      container.setAttribute('id',`idProduct${productInCart.id}` )
       container.classList.add('cart')
       container.innerHTML += `
        <img src="${productInCart.url}" alt="...">
@@ -152,7 +155,6 @@ deleteProduct = (idProductToDelete) =>{
    // }
    const index = shoppingCart.findIndex(product => product.id === idProductToDelete);
    shoppingCart.splice(index, 1)
-   console.log(shoppingCart)
    Swal
    .fire({
        title: "¿Seguro quieres eliminar el producto?",
@@ -164,7 +166,9 @@ deleteProduct = (idProductToDelete) =>{
    .then(resultado => {
        if (resultado.value) {
            // Hicieron click en "Sí"
-           console.log("*se elimina el producto*");
+           const card = document.getElementById(`idProduct${idProductToDelete}`)
+           console.log(idProductToDelete)
+           card.remove()
        } else {
            // Dijeron que no
            console.log("*NO se elimina el producto*");
