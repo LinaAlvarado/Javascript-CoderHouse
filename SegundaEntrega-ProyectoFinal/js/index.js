@@ -28,6 +28,7 @@ const viewProducts = (products) => {
    const productContainer = document.getElementById('products-container');
       products.forEach(product => {
       const card = document.createElement('div');
+      card.setAttribute('id',`idProduct${product.id}` )
       card.innerHTML +=
       ` <div>
             <img src="${product.url}" alt="...">
@@ -79,6 +80,7 @@ function filterProducts(dataProducts, userBudget) {
    productsContainer.innerHTML = '';
    for (let product of filteredProducts) {
       const card = document.createElement('div');
+      card.setAttribute('id',`idProduct${product.id}` )
       card.innerHTML += `
     <img src="${product.url}" alt="...">
     <div> 
@@ -117,6 +119,7 @@ const viewCart = (productsInCart) => {
    productsInCart.forEach(productInCart => {
       let container = document.createElement('div')
       container.classList.add('cart')
+      container.setAttribute('id',`idProduct${productInCart.id}` )
       container.innerHTML += `
        <img src="${productInCart.url}" alt="...">
        <div> 
@@ -151,11 +154,11 @@ deleteProduct = (idProductToDelete) =>{
    // }
    const index = shoppingCart.findIndex(product => product.id === idProductToDelete);
    shoppingCart.splice(index, 1)
-   console.log(shoppingCart)
-
+   const card = document.getElementById(`idProduct${idProductToDelete}`)
+   console.log(idProductToDelete)
+   card.remove()
    // const cartContainer = document.getElementById('shopping-cart');
    // cartContainer.innerHTML = ''
-
 }
 
 
