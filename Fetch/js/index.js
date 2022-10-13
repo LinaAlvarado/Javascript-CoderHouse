@@ -8,7 +8,7 @@
 
 const viewProducts = () => {
    const productContainer = document.getElementById('products-container');
-   fetch("/Fetch/js/productsData.json")
+   fetch("js/productsData.json")
    .then((res)=> res.json())
    .then((data)=> {
       data.forEach(product => {
