@@ -1,0 +1,56 @@
+[
+    {"id":1,
+    "item":"zapatos",
+    "price":200000,
+    "url":"img/zapato.png",
+    "quantity": 0
+    },
+    {"id":2,
+    "item":"tenis",
+    "price":50000,
+    "url":"img/tenis.png",
+    "quantity": 0
+    },
+    {"id":3,
+    "item":"vestido",
+    "price":100000,
+    "url":"img/Vestido.png",
+    "quantity": 0
+    },
+    {"id":4,
+    "item":"reloj",
+    "price":30000,
+    "url":"img/Reloj.png",
+    "quantity": 0
+    },
+    {"id":5,
+    "item":"anillo",
+    "price":85000,
+    "url":"img/anillo.png",
+    "quantity": 0
+    },
+    {"id":6,
+    "item":"falda",
+    "price":76000,
+    "url":"img/Falda.png",
+    "quantity": 0
+    },
+    {"id":7,
+    "item":"celular",
+    "price":700000,
+    "url":"img/Celular.png",
+    "quantity": 0
+    },
+    {"id":8,
+    "item":"juguete",
+    "price":40000,
+    "url":"img/Juguete.png",
+    "quantity": 0
+    },
+    {"id":9,
+    "item":"marcador",
+    "price":2000,
+    "url":"img/marcador.png",
+    "quantity": 0
+    }
+]
