@@ -17,7 +17,7 @@
 
 // Prueba igualando 
 const requestData = async () => {
-   const resp = await fetch("/Fetch/js/productsData.json")
+   const resp = await fetch("./js/productsData.json")
    return await resp.json()
 };
 
