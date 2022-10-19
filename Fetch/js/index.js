@@ -1,16 +1,38 @@
-// Prueba 1
-// let dataJson =[];
-// const peticion =  async ( ) => {
+// Prueba recorriendo a un array prueba 1
+// const requestData = async () => {
 //    const resp = await fetch("/Fetch/js/productsData.json")
-//    const json = await resp.json()
-//    return dataJson.push(json)
+//    return await resp.json()
 // };
 
-const viewProducts = () => {
+// let dataJson = [ ];
+
+// requestData().then( products => {
+//    products.forEach( product => {
+//       dataJson.push(product)
+//    })
+//    viewProducts(dataJson)
+//    console.log(dataJson)
+// })
+
+
+// Prueba igualando 
+const requestData = async () => {
+   const resp = await fetch("/Fetch/js/productsData.json")
+   return await resp.json()
+};
+
+let dataJson = [ ];
+
+requestData().then( products => {
+   dataJson = products
+   viewProducts(dataJson)
+   })
+  
+   console.log(dataJson)
+
+
+const viewProducts = (data) => {
    const productContainer = document.getElementById('products-container');
-   fetch("js/productsData.json")
-   .then((res)=> res.json())
-   .then((data)=> {
       data.forEach(product => {
          const card = document.createElement('div');
          card.setAttribute('id',`idProduct${product.id}` )
@@ -30,18 +52,14 @@ const viewProducts = () => {
             cart(`${product.id}`);
          })
       });
-   })
-  
-};
-
-viewProducts();
+   };
 
 let budget = 0;
 
 let buttonSearch = document.getElementById('search-button');
 buttonSearch.addEventListener('click', () => {
    budget = document.getElementById('search-input').value;
-   filterProducts(allProducts, budget)
+   filterProducts(dataJson, budget)
 });
 
 //  filtrar los items que cumplan con la condición (que el price sea menor que el presupuesto).
@@ -88,7 +106,7 @@ function filterProducts(dataProducts, userBudget) {
 const shoppingCart = [];
 const cart = (idProduct) => {
    const filteredProductsById = () => {
-      let productsToBuy = allProducts.find(product => product.id === idProduct);
+      let productsToBuy = dataJson.find(product => product.id === idProduct);
       shoppingCart.push(productsToBuy)
       const saveProducts = JSON.stringify(shoppingCart)
       localStorage.setItem('productos en el carrito', saveProducts)
