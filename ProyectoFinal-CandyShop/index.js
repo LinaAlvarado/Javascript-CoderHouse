@@ -110,7 +110,9 @@ inputSelected.addEventListener('change', () => {
   const valueCategory = inputSelected.value;
   const filteredByCategory = filterCategory(valueCategory, dataJson);
   const productContainer = document.getElementById("products_container");
+  const noProductsContainer = document.getElementById("no_products");
   productContainer.innerHTML = " "
+  noProductsContainer.innerHTML = " "
   viewProducts(filteredByCategory)
 })
 
