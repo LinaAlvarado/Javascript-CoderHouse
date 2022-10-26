@@ -98,14 +98,21 @@ const requestData = async () => {
     }
   }
 
-
-
-  const 
-
-// filtrar por categoria
-const filterByCategory = (category) => {
-    
+//filtrar por categoria
+const filterCategory = ( categoryInput, allData) => {
+  const products = allData.filter( data => data.category === categoryInput)
+  return products
 }
+
+const inputSelected = document.getElementById("selectCategory")
+
+inputSelected.addEventListener('change', () => {
+  const valueCategory = inputSelected.value;
+  const filteredByCategory = filterCategory(valueCategory, dataJson);
+  const productContainer = document.getElementById("products_container");
+  productContainer.innerHTML = " "
+  viewProducts(filteredByCategory)
+})
 
 
   
