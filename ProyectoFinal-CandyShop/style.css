@@ -1,0 +1,173 @@
+@import url('https://fonts.googleapis.com/css2?family=Fredoka+One&display=swap');
+*{
+    padding:0;
+    margin:0;
+    font-family:'Fredoka One', cursive;
+}
+.nav{
+    background:#A6FDD3;
+    padding:15px;
+    font-size:18px;
+    color:#1E1E1E;
+    margin-bottom:50px;
+}
+.nav_link{
+    text-decoration:none;
+    color:#1E1E1E;
+    text-align: center;
+}
+.nav_container{
+    display:grid;
+    grid-template-columns:repeat(2,1fr);
+    grid-template-rows:auto;
+    gap:86%;
+}
+.nav_icon{
+    font-size:20px;
+}
+
+
+.home{
+    display:grid;
+    grid-template-columns:repeat(2,1fr);
+    grid-template-rows:auto;
+    margin-right:150px;
+    margin-left:300px;
+}
+.home_title{
+    font-size:70px;
+    margin-bottom:10px;
+}
+.home_sub_title{
+    font-size:17px;
+    font-family: 'Nunito', sans-serif;
+}
+.home_container{
+    margin-top:100px;
+}
+.home_Img{
+    width:400px;
+}
+
+
+.pregunta{
+    margin-top:30px;
+    background:#FF5678;
+    color:#fff;
+    padding:15px 30px;
+    border-radius:45px;
+    width:178px;
+    text-align:center;
+    position:relative;
+    right:-185px;
+    bottom:-25px;
+}
+main{
+    background:#FFD2DB;
+    padding:50px 180px 40px 180px;
+    height:130vh;
+}
+select{
+    background:#fff;
+    color:#FF5678;
+    padding: 8px 25px;
+    border-radius:5px;
+    border: none;
+    margin: 7px;
+    font-family: 'Nunito', sans-serif; 
+}
+option{
+    font-family: 'Nunito', sans-serif; 
+}
+input{
+    background:#fff;
+    color:#FF5678;
+    padding:8px 15px;
+    border-radius:5px;
+    border: none;
+    margin:3px;
+    font-family: 'Nunito', sans-serif; 
+}
+input::placeholder{
+    color:#FF5678;
+}
+button{
+    background:#FF5678;
+    color:#fff;
+    border:none;
+    padding:8px 15px;
+    border-radius:5px;
+    margin:3px;
+    transition: all 0.3s ease;
+}
+button:hover{
+    background:#fa7791;
+}
+
+.ups_container{
+    display:grid;
+    grid-template-columns:repeat(2,1fr);
+    grid-template-rows:auto;
+    margin-right:300px;
+    margin-left:300px;
+}
+.ups_title{
+    margin-bottom:10px;
+    font-size:70px;
+    margin-top:110px;
+}
+.ups_sub_title{
+    font-size:17px;
+    font-family: 'Nunito', sans-serif;
+}
+.ups_Img{
+    margin-top:50px;
+    width:300px;
+}
+
+
+.cars_container{
+    margin-top:30px;
+    display:grid;
+    grid-template-columns:repeat(4,1fr);
+    grid-template-rows:auto;
+    gap:1em;
+    margin-right:230px;
+    margin-left:230px;
+}
+.candy_car{
+    width:220px;
+    height:240px;
+    background:#fff;
+    border-radius:15px;
+    padding:15px 15px;
+    text-align: center;
+}
+
+.img_candy{
+    width:220px;
+    height:130px;
+    border-radius:10px;
+    margin-bottom:15px;
+}
+.car_button{
+    background:#FFD2DB;
+    color:#FF5678;
+    border:none;
+    padding:5px 30px;
+    border-radius:20px;
+    text-decoration:none;
+    font-size: 16px;
+    transition: all 0.3s ease;
+}
+.car_button:hover{
+    background:#FF5678;
+    color:#fff;
+}
+.candy_car p{
+    margin-bottom:5px;
+    font-family: 'Nunito', sans-serif;
+}
+.card_title{
+    font-weight:bold;
+}

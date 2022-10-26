@@ -15,6 +15,7 @@
 // })
 
 // Prueba igualando
+
 const requestData = async () => {
    const resp = await fetch("./js/productsData.json");
    return await resp.json();
@@ -117,6 +118,7 @@ const requestData = async () => {
  };
  
  const viewCart = () => {
+
    const cartContainer = document.getElementById("shopping-cart");
    cartContainer.innerHTML = "";
    shoppingCart.forEach((productInCart) => {
@@ -150,11 +152,9 @@ const requestData = async () => {
  };
  
  const terminarCompra = () => {
-   const getShoppingCart =
-   JSON.parse(localStorage.getItem("productos en el carrito")) || [];
-   viewCart(getShoppingCart);
+   return JSON.parse(localStorage.getItem("productos en el carrito")) || [];
  };
- 
+
  terminarCompra();
  
  deleteProduct = (idProductToDelete) => {

@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Candy Shop</title>
+    <link rel="shortcut icon" href="img/Logo_Candy.png">
+    <link rel="stylesheet" href="style.css">
+    <!-- boxicons -->
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+</head>
+<body>
+    
+    <nav class="nav">
+        <div class="nav_container">
+            <p>Candy Shop.</p>
+            <a class="nav_link" href="">
+                <p>Carrito <i class='bx bxs-cart bx-flip-horizontal nav_icon' ></i></p>
+            </a>
+        </div>
+    </nav>
+
+    <header>
+        <section class="home">
+            <div class="home_container">
+                <h1 class="home_title">Candy shop.</h1>
+                <p class="home_sub_title">Hola te damos la bienvenida <br> a la tienda más dulce de todas..</p>
+            </div>
+            <div>
+                <img class="home_Img" src="img/Candy.svg" alt="Ilustración">
+            </div>
+        </section>
+    </header>
+
+    <p class="pregunta">¿Qué quieres comprar?</p>
+
+    <main>
+        <section class="input">
+            <form>
+                <select  name="Seleciona categoria" placeholder="Seleciona categoria">
+                    <option value="Seleciona categoria">Selecciona categoría</option>
+                    <option value="chocolates">Chocolates</option>
+                    <option value="caramelo">Caramelo</option>
+                    <option value="gomitas">Gomitas</option>
+                    <option value="galletas">Galletas</option>
+                </select>
+
+                <input type="text" placeholder="Escribe tu presupuesto.." id="search_input">
+
+                <button type="button" id="search_button">Filtrar</button>
+            </form>
+        </section>
+<!--
+        <section>
+            <div class="ups_container">
+
+                <div>
+                    <img class="ups_Img" src="img/sitting.svg" alt="">
+                </div>
+                
+
+                <div>
+                    <h1 class="ups_title">Ups!</h1>
+                    <p class="ups_sub_title">No tenemos dulces dentro de <br> ese rango de presupuesto..</p>
+                </div>
+
+            </div>
+        </section>
+-->
+<section id="no_products"> 
+</section>
+
+<section>
+    <div class="cars_container"  id="products_container">
+    <!-- <div class="candy_car">
+        <div class="img_candy">
+        </div>
+        <p class="card_title">Nombre del Articulo</p>
+        <p>$ 3.400</p>
+        <a class="car_button" href="">Añadir al carrito</a>
+    </div>-->
+    </div>
+</section>
+    </main>
+
+<script src="index.js"></script>
+</body>
+</html>

@@ -1,0 +1,127 @@
+[
+    {"id":1,
+    "category":"galletas",
+    "item":"Galleta Oreo",
+    "price":10000,
+    "url":"img/oreo.jpg",
+    "quantity": 0
+    },
+
+    {"id":2,
+    "category":"galletas",
+    "item":"Galleta Noel",
+    "price":12000,
+    "url":"img/galletas3.jpg",
+    "quantity": 0
+    },
+
+    {"id":3,
+    "category":"galletas",
+    "item":"Tosh Vainilla",
+    "price":9000,
+    "url":"img/galleta2.jpg",
+    "quantity": 0
+    },
+
+    {"id":4,
+    "category":"galletas",
+    "item":"Chips Ahoy",
+    "price":9000,
+    "url":"img/galleta1.jpg",
+    "quantity": 0
+    },
+
+    {"id":5,
+    "category":"gomitas",
+    "item":"Gummy Pop",
+    "price":7000,
+    "url":"img/gummy-pop.png",
+    "quantity": 0
+    },
+
+    {"id":6,
+    "category":"gomitas",
+    "item":"Gomitas Grissly",
+    "price":9000,
+    "url":"img/gomita.jpg",
+    "quantity": 0
+    },
+
+    {"id":7,
+    "category":"chocolates",
+    "item":"Ferrero Noggy",
+    "price":14000,
+    "url":"img/chocolate1.jpg",
+    "quantity": 0
+    },
+
+    {"id":8,
+    "category":"chocolates",
+    "item":"Ferrero Rocher",
+    "price":20000,
+    "url":"img/chocolate.png",
+    "quantity": 0
+    },
+
+    {"id":8,
+    "category":"caramelo",
+    "item":"Fruticas",
+    "price":7000,
+    "url":"img/caramelo.jpg",
+    "quantity": 0
+    },
+
+    {"id":9,
+    "category":"chocolates",
+    "item":"Barra Chocolate",
+    "price":7000,
+    "url":"img/barrachocolate.jpg",
+    "quantity": 0
+    },
+
+    {"id":10,
+    "category":"caramelo",
+    "item":"Aciduladito",
+    "price":7000,
+    "url":"img/caramelos-suaves.png",
+    "quantity": 0
+    },
+
+    {"id":11,
+    "category":"caramelo",
+    "item":"Moritas",
+    "price":5000,
+    "url":"img/moritas.jpg",
+    "quantity": 0
+    },
+
+    {"id":11,
+    "category":"caramelo",
+    "item":"Mini Bum",
+    "price":9000,
+    "url":"img/bombom.jpg",
+    "quantity": 0
+    },
+
+    {"id":12,
+    "category":"gomitas",
+    "item":"Gomas Corazón",
+    "price":6000,
+    "url":"img/gomitasCorazon.jpg",
+    "quantity": 0
+    },
+    {"id":13,
+    "category":"chocolates",
+    "item":"Deditos",
+    "price":6000,
+    "url":"img/chocolates.jpg",
+    "quantity": 0
+    },
+    {"id":14,
+    "category":"gomitas",
+    "item":"Sour Patch",
+    "price":5000,
+    "url":"img/gomasEmpaque.jpg",
+    "quantity": 0
+    }
+]
