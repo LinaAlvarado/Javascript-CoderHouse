@@ -131,9 +131,9 @@ button:hover{
     display:grid;
     grid-template-columns:repeat(4,1fr);
     grid-template-rows:auto;
-    gap:1em;
-    margin-right:230px;
-    margin-left:230px;
+    gap:1rem;
+    /* margin-right:1rem;
+    margin-left:1rem; */
 }
 .candy_car{
     width:220px;
@@ -170,4 +170,15 @@ button:hover{
 }
 .card_title{
     font-weight:bold;
+}
+
+.menu_cart{
+    position: fixed;
+    top: 0;
+    right: 0;
+    width: 20%;
+    height: 100vh;
+    padding: 20px;
+    background-color: white;
+    box-shadow: -2px 2px 15px #707070a8;
 }
