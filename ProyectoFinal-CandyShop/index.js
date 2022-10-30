@@ -1,7 +1,3 @@
-// window.addEventListener("DOMContentLoaded", () => {
-//   viewMenuCart()
-// })
-
 const requestData = async () => {
     const resp = await fetch("./data.json");
     return await resp.json();
@@ -36,7 +32,7 @@ const requestData = async () => {
           productContainer.append(card);
           const buttonAddCart = document.getElementById(product.id);
           buttonAddCart.addEventListener("click", () => {
-            // cart(product.id);
+            cart(product.id);
           });
         });
       };
@@ -52,7 +48,7 @@ const requestData = async () => {
   //  filtrar los items que cumplan con la condición (que el price sea menor que el presupuesto).
   //  obtener el o los items que seleccione el usuario.
   function filterProducts(dataProducts, userBudget) {
-    const upsContainer = document.getElementById
+    const cartContainer = document.getElementById("menu_cart_id");
     const noProductsContainer = document.getElementById("no_products");
     const guideText = document.createElement("div");
     guideText.setAttribute("class", "ups_container")
@@ -61,6 +57,7 @@ const requestData = async () => {
     );
     if (filteredProducts.length === 0) {
       console.log("no hay productos");
+      cartContainer.style.display= "none";
       noProductsContainer.innerHTML = " ";
       guideText.innerHTML = `
         <div>
@@ -73,6 +70,7 @@ const requestData = async () => {
          `;
       noProductsContainer.append(guideText);
     } else {
+      cartContainer.style.display= "block";
       console.log("si hay productos");
       noProductsContainer.innerHTML = " ";
     }
@@ -95,9 +93,9 @@ const requestData = async () => {
                   </div>
                   `;
       productsContainer.append(card);
-      const buttonAddCart = document.getElementById(`${product.id}`);
+      const buttonAddCart = document.getElementById(product.id);
       buttonAddCart.addEventListener("click", () => {
-        // cart(`${product.id}`);
+        cart(product.id);
         // addQuantity( otherProduct)
       });
     }
@@ -121,55 +119,71 @@ inputSelected.addEventListener('change', () => {
   viewProducts(filteredByCategory)
 })
 
+// Añadir al carrito
+const shoppingCart = [];
+const cart = (idProduct) => {
+  const filteredProductsById = () => {
+    let productsToBuy = dataJson.find((product) => product.id === idProduct);
+    shoppingCart.push(productsToBuy);
+    const saveProducts = JSON.stringify(shoppingCart);
+    localStorage.setItem("productos en el carrito", saveProducts);
+  };
+  filteredProductsById();
+  viewCart();
+
+  console.log(shoppingCart);
+};
 
   
-//   const shoppingCart = [];
-//   const cart = (idProduct) => {
-//     const filteredProductsById = () => {
-//       let productsToBuy = dataJson.find((product) => product.id === idProduct);
-//       shoppingCart.push(productsToBuy);
-//       const saveProducts = JSON.stringify(shoppingCart);
-//       localStorage.setItem("productos en el carrito", saveProducts);
-//     };
-//     filteredProductsById();
-//     viewCart();
+
+  // const cart = (idProduct) => {
+  //   const filteredProductsById = () => {
+  //     let productsToBuy = dataJson.find((product) => product.id === idProduct);
+  //     shoppingCart.push(productsToBuy);
+  //     const saveProducts = JSON.stringify(shoppingCart);
+  //     localStorage.setItem("productos en el carrito", saveProducts);
+  //   };
+  //   filteredProductsById();
+  //   viewCart();
   
-//     console.log(shoppingCart);
-//   };
+  //   console.log(shoppingCart);
+  // };
   
-//   const viewCart = () => {
+  const viewCart = () => {
  
-//     const cartContainer = document.getElementById("shopping-cart");
-//     cartContainer.innerHTML = "";
-//     shoppingCart.forEach((productInCart) => {
-//       let container = document.createElement("div");
-//       container.setAttribute("id", `idProduct${productInCart.id}`);
-//       container.classList.add("cart");
-//       container.innerHTML += `
-//          <img src="${productInCart.url}" alt="...">
-//          <div> 
-//          <h3>${productInCart.item}</h3>
-//          <p>$ ${productInCart.price}</p>
-//          <button id="eliminar${productInCart.id}"> Eliminar </button>
-//          </div>
-//          `;
+    const cartContainer = document.getElementById("menu_cart_products_id");
+    cartContainer.innerHTML = "";
+    shoppingCart.forEach((productInCart) => {
+      let container = document.createElement("div");
+      container.setAttribute("id", `${productInCart.id}`);
+      container.setAttribute("class", "candy_Incar")
+      container.innerHTML += `
+      <div class="img_candy_Incar">
+      <img class="img_candy_Incar" src="${productInCart.url}" alt="...">
+      </div>
+      <div class="menu_cart_info"> 
+      <p>${productInCart.item}</p>
+      <p>$ ${productInCart.price}</p>
+      </div>
+      <button type="button" id="eliminar${productInCart.id}"><img src="img/delete_button.png" alt="button_delete"></button>
+  `;
   
-//       container.querySelector("button").addEventListener("click", () => {
-//         index = shoppingCart.findIndex(
-//           (eliminar) => eliminar.id === productInCart.id
-//         );
-//         shoppingCart.splice(index, 1);
-//         viewCart();
-//       });
+      container.querySelector("button").addEventListener("click", () => {
+        index = shoppingCart.findIndex(
+          (eliminar) => eliminar.id === productInCart.id
+        );
+        shoppingCart.splice(index, 1);
+        viewCart();
+      });
   
-//       cartContainer.appendChild(container);
-//       const buttonRemoveCart = document.getElementById(`eliminar${productInCart.id}`)
-//        buttonRemoveCart.addEventListener('click', ()=>{
-//           // console.log('quitando elemento')
-//           deleteProduct(`${productInCart.id}`)})
+      cartContainer.appendChild(container);
+      const buttonRemoveCart = document.getElementById(`eliminar${productInCart.id}`)
+       buttonRemoveCart.addEventListener('click', ()=>{
+          // console.log('quitando elemento')
+          deleteProduct(`${productInCart.id}`)})
       
-//     });
-//   };
+    });
+  };
   
 //   const terminarCompra = () => {
 //     return JSON.parse(localStorage.getItem("productos en el carrito")) || [];
