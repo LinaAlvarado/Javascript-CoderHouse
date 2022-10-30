@@ -65,7 +65,7 @@
 main{
     background:#FFD2DB;
     padding:50px 180px 40px 180px;
-    height:130vh;
+    height:100%;
 }
 select{
     background:#fff;
@@ -127,11 +127,12 @@ button:hover{
 
 
 .cars_container{
+    /* width: 40%; */
     margin-top:30px;
     display:grid;
-    grid-template-columns:repeat(4,1fr);
-    grid-template-rows:auto;
-    gap:1rem;
+    grid-template-columns:repeat(3,1fr);
+    /* grid-template-rows:; */
+    /* gap:20px; */
     /* margin-right:1rem;
     margin-left:1rem; */
 }
@@ -149,6 +150,7 @@ button:hover{
     height:130px;
     border-radius:10px;
     margin-bottom:15px;
+    background-color: #A6FDD3;
 }
 .car_button{
     background:#FFD2DB;
@@ -173,12 +175,66 @@ button:hover{
 }
 
 .menu_cart{
-    position: fixed;
-    top: 0;
-    right: 0;
-    width: 20%;
-    height: 100vh;
-    padding: 20px;
-    background-color: white;
-    box-shadow: -2px 2px 15px #707070a8;
+    background-color:#beffe0;
+    box-shadow: -2px 2px 15px #d6d6d6a8;
+    border-radius: 20px;
+}
+
+.menu_cart_info{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+.menu_cart_products{
+    /* background-color: #A6FDD3; */
+    height: 100vw;
+}
+
+.candy_Incar{
+    margin: 6px auto;
+    display: flex;
+    justify-content: space-around;
+    width: 80%;
+    height:100px;
+    background:white;
+    border-radius:15px;
+    padding:15px 15px;
+    box-shadow: 2px 1px 15px #c0c0c0a8;
+}
+
+.img_candy_Incar{
+    width:160px;
+    height:100px;
+    border-radius:10px;
+    margin-bottom:15px;
+    background-color: #A6FDD3;
+}
+
+.candy_Incar button{
+   background-color: white;
+   height: 50px;
+}
+
+.candy_Incar button img{
+    height: 25px;
+}
+
+.grid{
+    display: grid;
+    grid-template-areas: "products cart";
+    grid-template-rows: 1fr;
+}
+
+.cars_container{
+    grid-area: products;
+}
+
+.menu_cart{
+    grid-area: cart;
+}
+
+.menu_cart_tittle{
+    margin-bottom: 20px;
+    margin-top: 15px;
+    margin-left: 20px;
 }

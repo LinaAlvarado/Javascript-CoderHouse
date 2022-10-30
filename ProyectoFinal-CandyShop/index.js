@@ -1,3 +1,7 @@
+// window.addEventListener("DOMContentLoaded", () => {
+//   viewMenuCart()
+// })
+
 const requestData = async () => {
     const resp = await fetch("./data.json");
     return await resp.json();
@@ -203,9 +207,8 @@ inputSelected.addEventListener('change', () => {
 //     // cartContainer.innerHTML = ''
 //   };
   
- 
- 
- 
+
+
  
  
  

@@ -13,15 +13,7 @@
 <body>
     
     <nav class="nav">
-        <div class="nav_container">
             <p>Candy Shop.</p>
-            <a class="nav_link" href="">
-                <p>Carrito <i class='bx bxs-cart bx-flip-horizontal nav_icon' ></i></p>
-            </a>
-        </div>
-        <div class="menu_cart">
-            <h2> Carrito de Compras</h2>
-        </div>
     </nav>
 
     <header>
@@ -71,20 +63,37 @@
             </div>
         </section>
 -->
-<section id="no_products"> 
-</section>
+        <section id="no_products"> 
+        </section>
 
-<section>
-    <div class="cars_container"  id="products_container">
-    <!-- <div class="candy_car">
-        <div class="img_candy">
+    <section class="grid">
+        <!-- PRODUCTS -->
+        <div class="cars_container"  id="products_container">
+        <!-- <div class="candy_car">
+            <div class="img_candy">
+            </div>
+            <p class="card_title">Nombre del Articulo</p>
+            <p>$ 3.400</p>
+            <a class="car_button" href="">Añadir al carrito</a>
+        </div>-->
         </div>
-        <p class="card_title">Nombre del Articulo</p>
-        <p>$ 3.400</p>
-        <a class="car_button" href="">Añadir al carrito</a>
-    </div>-->
-    </div>
-</section>
+        <!-- CART -->
+        <div class="menu_cart">
+            <h2 class="menu_cart_tittle"> Mi carrito</h2>
+            <div class="menu_cart_products">
+                <div class="candy_Incar">
+                    <div class="img_candy_Incar">
+                    </div>
+                    <div class="menu_cart_info"> 
+                    <p>Nombre del Articulo</p>
+                    <p>$ 3.400</p>
+                    </div>
+                    <button type="button" id="deleteButton imgButton"><img src="img/delete_button.png" alt="button_delete"></button>
+                </div>
+            </div>
+        </div>
+    </section>
+
     </main>
 
 <script src="index.js"></script>
