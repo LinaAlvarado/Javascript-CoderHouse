@@ -52,6 +52,7 @@ const requestData = async () => {
   //  filtrar los items que cumplan con la condición (que el price sea menor que el presupuesto).
   //  obtener el o los items que seleccione el usuario.
   function filterProducts(dataProducts, userBudget) {
+    const upsContainer = document.getElementById
     const noProductsContainer = document.getElementById("no_products");
     const guideText = document.createElement("div");
     guideText.setAttribute("class", "ups_container")
