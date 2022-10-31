@@ -32,6 +32,7 @@ const requestData = async () => {
           productContainer.append(card);
           const buttonAddCart = document.getElementById(product.id);
           buttonAddCart.addEventListener("click", () => {
+            console.log('añadir a carrito', product.id)
             cart(product.id);
           });
         });
@@ -95,6 +96,7 @@ const requestData = async () => {
       productsContainer.append(card);
       const buttonAddCart = document.getElementById(product.id);
       buttonAddCart.addEventListener("click", () => {
+        console.log('id del producto', product.id)
         cart(product.id);
         // addQuantity( otherProduct)
       });
@@ -154,16 +156,14 @@ const cart = (idProduct) => {
       </div>
       <button type="button" id="eliminar${productInCart.id}"><img src="img/delete_button.png" alt="button_delete"></button>
   `;
-  
-      container.querySelector("button").addEventListener("click", () => {
-       
-      });
+
       cartContainer.appendChild(container);
       const buttonRemoveCart = document.getElementById(`eliminar${productInCart.id}`)
        buttonRemoveCart.addEventListener('click', ()=>{
           // console.log('quitando elemento')
+          console.log('Este es el ID que entra en el boron borrar',`${productInCart.id}` )
           deleteProduct(`${productInCart.id}`)})
-      
+       
     });
   };
   
@@ -229,9 +229,10 @@ Swal.fire({
     )
    
     // const card = document.getElementById(`idProduct${idProductToDelete}`);
-    index = shoppingCart.findIndex(
-      (eliminar) => eliminar.id === idProductToDelete
+    const index = shoppingCart.findIndex(
+      (element)=>element.id === idProductToDelete
     );
+   
     shoppingCart.splice(index, 1);
     viewCart();
     // card.remove();
