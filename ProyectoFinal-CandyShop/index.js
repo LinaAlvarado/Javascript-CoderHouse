@@ -122,6 +122,8 @@ inputSelected.addEventListener('change', () => {
 // Añadir al carrito
 let shoppingCart = [];
 const cart = (idProduct) => {
+  const emptyCart = document.querySelector(".empty");
+  emptyCart.style.display= "none";
   const filteredProductsById = () => {
     let productsToBuy = dataJson.find((product) => product.id === idProduct);
     shoppingCart.push(productsToBuy);
@@ -156,7 +158,6 @@ const cart = (idProduct) => {
       container.querySelector("button").addEventListener("click", () => {
        
       });
-  
       cartContainer.appendChild(container);
       const buttonRemoveCart = document.getElementById(`eliminar${productInCart.id}`)
        buttonRemoveCart.addEventListener('click', ()=>{
@@ -166,13 +167,13 @@ const cart = (idProduct) => {
     });
   };
   
-  const terminarCompra = () => {
+  const getItems = () => {
     shoppingCart = JSON.parse(localStorage.getItem("productos en el carrito")) || [];
     viewCart();
     // return JSON.parse(localStorage.getItem("productos en el carrito")) || [];
   };
  
-  terminarCompra();
+  getItems();
   
   deleteProduct = (idProductToDelete) => {
     console.log('eliminado',shoppingCart)
@@ -215,13 +216,13 @@ Swal.fire({
   confirmButtonColor: '#1E1E1E',
   color: '#1E1E1E',
   cancelButtonColor: '#FF5678',
-  confirmButtonText: 'Yes, delete it!'
+  confirmButtonText: 'Si',
+  cancelButtonText:'No'
 }).then((result) => {
   if (result.isConfirmed) {
     Swal.fire({
       title: 'Eliminado!',
       icon: 'success',
-      iconColor:'#FF5678',
       color: '#1E1E1E',
       confirmButtonColor: '#1E1E1E'
     } 
@@ -241,10 +242,17 @@ Swal.fire({
    
 })
 };
-  
 
+const pay = () => {
+  const payButton = document.getElementById('pay_button')
+  payButton.addEventListener('click', ()=>{
+    Swal.fire({ title: 'Tu compra se realizó con exito!',
+    icon: 'success',
+    color: '#1E1E1E',
+    confirmButtonColor: '#FF5678'
+  })
+    console.log('pagar')
+  })
+}
 
- 
- 
- 
- 
+pay()

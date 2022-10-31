@@ -187,7 +187,7 @@ button:hover{
 }
 .menu_cart_products{
     /* background-color: #A6FDD3; */
-    height: 100vw;
+    height: auto;
 }
 
 .candy_Incar{
@@ -233,8 +233,28 @@ button:hover{
     grid-area: cart;
 }
 
+.pay{
+    display: flex;
+    align-items: center;
+    justify-content: center; 
+}
+.pay_button_class{
+   
+    width: 50%;
+    
+}
 .menu_cart_tittle{
     margin-bottom: 20px;
     margin-top: 15px;
     margin-left: 20px;
+}
+
+.empty{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.empty img{
+    width:40%;
 }
