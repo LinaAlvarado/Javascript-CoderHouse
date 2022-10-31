@@ -126,6 +126,8 @@ let shoppingCart = [];
 const cart = (idProduct) => {
   const emptyCart = document.querySelector(".empty");
   emptyCart.style.display= "none";
+  const paySection = document.querySelector(".pay")
+  paySection.style.display = "flex";
   const filteredProductsById = () => {
     let productsToBuy = dataJson.find((product) => product.id === idProduct);
     shoppingCart.push(productsToBuy);
@@ -168,7 +170,12 @@ const cart = (idProduct) => {
   };
   
   const getItems = () => {
+   
     shoppingCart = JSON.parse(localStorage.getItem("productos en el carrito")) || [];
+    if( shoppingCart === [] ){
+      const emptyCart = document.querySelector(".empty");
+      emptyCart.style.display= "block";
+    } 
     viewCart();
     // return JSON.parse(localStorage.getItem("productos en el carrito")) || [];
   };
